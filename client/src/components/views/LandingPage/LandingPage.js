@@ -1,14 +1,11 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import { response } from "express";
 
 function LandingPage() {
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/hello")
-      .then((response) =>
-        console.log(response.data + " nice to see you again")
-      );
+    axios.get("/api/hello").then(response => {
+      console.log(response);
+    });
   }, []);
   return <div>LandingPage</div>;
 }
